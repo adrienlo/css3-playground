@@ -1,0 +1,122 @@
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.animate {
+  -webkit-animation: background-pattern 0.5s infinite;
+  -moz-animation: background-pattern 0.5s infinite;
+  animation: background-pattern 0.5s infinite;
+}
+#background-pattern {
+  display: none;
+  visibility: hidden;
+}
+ul {
+  padding-left: 0;
+  list-style: none;
+  margin-left: -5px;
+}
+ul > li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+ul.row {
+  margin: 0 auto;
+  padding-left: 34px;
+  width: 100%;
+}
+ul.row li {
+  margin: 34px 34px 0 0;
+}
+ul.row li.peek-a-boo .item-image {
+  position: relative;
+}
+ul.row li.peek-a-boo .item-image:before {
+  content: '';
+  background: url('sprite.png') left center no-repeat;
+  display: block;
+  width: 50px;
+  height: 32px;
+  position: absolute;
+  z-index: -1;
+}
+ul.row li.peek-a-boo.forward .item-image:before {
+  -webkit-animation: play-forward 3s steps(9) forwards;
+  -moz-animation: play-forward 3s steps(9) forwards;
+  animation: play-forward 3s steps(9) forwards;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+ul.row li.peek-a-boo.backward .item-image:before {
+  -webkit-animation: play-forward 3s steps(9, start) reverse;
+  -moz-animation: play-forward 3s steps(9, start) reverse;
+  animation: play-forward 3s steps(9, start) reverse;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+ul.row li.peek-a-boo.loop .item-image:before {
+  -webkit-animation: play-forward 3s steps(9) infinite;
+  -moz-animation: play-forward 3s steps(9) infinite;
+  animation: play-forward 3s steps(9) infinite;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+ul.row li.peek-a-boo.top-left .item-image:before {
+  top: 0;
+  left: -50px;
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+ul.row li.peek-a-boo.top-right .item-image:before {
+  top: 0;
+  left: 155px;
+}
+ul.row li.peek-a-boo.bottom-left .item-image:before {
+  bottom: 0;
+  left: -50px;
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+ul.row li.peek-a-boo.bottom-right .item-image:before {
+  bottom: 0;
+  left: 155px;
+}
+ul.row li.peek-a-boo .item-desc {
+  line-height: 30px;
+}
+@-webkit-keyframes background-pattern {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -25px 0;
+  }
+}
+@-webkit-keyframes play-forward {
+  0% {
+    background-position: left center;
+  }
+  30% {
+    background-position: -450px;
+  }
+  100% {
+    background-position: -450px;
+  }
+}
+@keyframes play-forward {
+  0% {
+    background-position: left center;
+  }
+  30% {
+    background-position: -450px;
+  }
+  100% {
+    background-position: -450px;
+  }
+}
