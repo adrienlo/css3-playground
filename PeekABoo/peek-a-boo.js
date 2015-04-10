@@ -48,7 +48,7 @@ var PopIn = PopIn || {};
 						$item
 							.addClass(ANIMATION_CLASS)
 							.addClass(ALIGNMENT[alignment])
-							.addClass('forward');
+							.addClass('loop');
 
 						reset();
 					}, timer);
